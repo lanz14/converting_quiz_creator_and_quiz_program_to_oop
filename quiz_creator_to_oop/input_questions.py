@@ -13,3 +13,9 @@ class InputQuestions:
         question_text = self.get_question_input()
         if question_text.lower() == 'e':
             return False
+        
+    def generate_questions(self):
+        # Main loop for creating questions
+        while True:
+            if not self.add_question():
+                break
