@@ -39,7 +39,7 @@ class QuizCreator(InputQuestions):
                 file.write(f"B. {q_dict['b']}\n")
                 file.write(f"C. {q_dict['c']}\n")
                 file.write(f"D. {q_dict['d']}\n")
-                file.write(f"Answer: {q_dict['correct'].upper()}\n\n")
+                file.write(f"Answer: {q_dict['correct']}\n\n")
         
         print(f"\nYour {len(self.quiz)} questions saved to '{filename}'")
         print("Your quiz is ready!")
