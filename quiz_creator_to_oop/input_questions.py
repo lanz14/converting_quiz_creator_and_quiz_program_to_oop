@@ -35,7 +35,14 @@ class InputQuestions(InputChoices):
         correct = self.get_correct_answer()
         
         # Create and add question
-        new_question = InputQuestions(choice_a, choice_b, choice_c, choice_d, correct)
+        new_question = InputQuestions(
+            question = question_text,
+            choice_a = choice_a,
+            choice_b = choice_b,
+            choice_c = choice_c,
+            choice_d = choice_d,
+            correct = correct  
+        )
         self.quiz.append(new_question)
         
         print("Done!")
