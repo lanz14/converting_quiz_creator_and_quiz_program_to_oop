@@ -2,9 +2,20 @@ from input_choices import InputChoices
 
 class InputQuestions(InputChoices):
 
-    def __init__(self, question=None):
+    def __init__(self, question=None, choice_a=None, choice_b=None, choice_c=None, choice_d=None, correct=None):
+        super().__init__(choice_a, choice_b, choice_c, choice_d, correct)
         self.question = question
         self.quiz = []
+
+    def to_dict(self):
+        return {
+            'question': self.question,
+            'a': self.choice_a,
+            'b': self.choice_b,
+            'c': self.choice_c,
+            'd': self.choice_d,
+            'correct': self.correct
+        }
 
     def get_question_input(self):
         question = input("Input your question (type 'e' to exit): ")
