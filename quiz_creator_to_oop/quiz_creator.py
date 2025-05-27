@@ -16,16 +16,6 @@ class QuizCreator(InputQuestions):
         print(random.choice(self.welcome_messages).center(50))
         time.sleep(1)
 
-    def to_dict(self):
-        return {
-            'question': self.question,
-            'a': self.choice_a,
-            'b': self.choice_b,
-            'c': self.choice_c,
-            'd': self.choice_d,
-            'correct': self.correct
-        }
-
     def filename(self):
         filename = input("\nName your quiz file (press Enter for 'my_quiz.txt'): ")
         if not filename:
