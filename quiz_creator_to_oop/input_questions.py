@@ -6,6 +6,7 @@ class InputQuestions(InputChoices):
         super().__init__(choice_a, choice_b, choice_c, choice_d, correct)
         self.question = question
         self.quiz = []
+        self.correct = correct
 
     def to_dict(self):
         return {
@@ -14,7 +15,7 @@ class InputQuestions(InputChoices):
             'b': self.choice_b,
             'c': self.choice_c,
             'd': self.choice_d,
-            'correct': self.correct
+            'correct': self.correct.upper()
         }
 
     def get_question_input(self):
