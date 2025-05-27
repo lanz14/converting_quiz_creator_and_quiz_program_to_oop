@@ -4,6 +4,7 @@ class InputQuestions(InputChoices):
 
     def __init__(self, question=None):
         self.question = question
+        self.quiz = []
 
     def get_question_input(self):
         question = input("Input your question (type 'e' to exit): ")
@@ -22,7 +23,7 @@ class InputQuestions(InputChoices):
         correct = self.get_correct_answer()
         
         # Create and add question
-        new_question = InputQuestions(question_text, choice_a, choice_b, choice_c, choice_d, correct)
+        new_question = InputQuestions(choice_a, choice_b, choice_c, choice_d, correct)
         self.quiz.append(new_question)
         
         print("Done!")
