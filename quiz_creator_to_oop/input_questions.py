@@ -2,7 +2,7 @@ from input_choices import InputChoices
 
 class InputQuestions(InputChoices):
 
-    def __init__(self, question):
+    def __init__(self, question=None):
         self.question = question
 
     def get_question_input(self):
