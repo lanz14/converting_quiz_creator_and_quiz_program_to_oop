@@ -1,9 +1,11 @@
+from input_questions import InputQuestions
+
 import random
 import time
 
-class QuizCreator:
+class QuizCreator(InputQuestions):
 
-    def __init__(self, quiz):
+    def __init__(self):
         self.welcome_messages = ["Let them suffer... hehe", "Challenge them!", "Welcome!"]
         self.quiz = []
 
@@ -41,3 +43,8 @@ class QuizCreator:
         
         print(f"\nYour {len(self.quiz)} questions saved to '{filename}'")
         print("Your quiz is ready!")
+
+    def run_quiz(self):
+        self.display_header()
+        self.generate_questions()
+        self.save_quiz()
