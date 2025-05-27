@@ -1,4 +1,6 @@
-class InputQuestions:
+from input_choices import InputChoices
+
+class InputQuestions(InputChoices):
 
     def __init__(self, question):
         self.question = question
@@ -13,6 +15,18 @@ class InputQuestions:
         question_text = self.get_question_input()
         if question_text.lower() == 'e':
             return False
+        
+        choice_a, choice_b, choice_c, choice_d = self.get_choices_input()
+        
+        # Get correct answer
+        correct = self.get_correct_answer()
+        
+        # Create and add question
+        new_question = InputQuestions(question_text, choice_a, choice_b, choice_c, choice_d, correct)
+        self.quiz.append(new_question)
+        
+        print("Done!")
+        return True 
         
     def generate_questions(self):
         # Main loop for creating questions
