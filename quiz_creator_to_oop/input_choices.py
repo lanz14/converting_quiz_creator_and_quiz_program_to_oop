@@ -4,7 +4,7 @@ class InputChoices:
         self.choice_b = choice_b
         self.choice_c = choice_c
         self.choice_d = choice_d
-        self.correct = correct.lower()
+        self.correct = correct
 
     def get_choices_input(self):
         print("Input the four possible answers:")
@@ -22,5 +22,4 @@ class InputChoices:
             correct = input("Which is correct? (A/B/C/D): ")
             if correct not in valid_answers:
                 print("Please enter A, B, C, or D.")
-        
         return correct
