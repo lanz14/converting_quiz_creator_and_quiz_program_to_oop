@@ -10,3 +10,8 @@ class QuizProgram:
             print(welcome_message.center(50))
             print("-" * 50)
             time.sleep(1)
+
+    def __init__(self):
+        self.questions = []
+        self.score = 0
+        self.question_count = 0
