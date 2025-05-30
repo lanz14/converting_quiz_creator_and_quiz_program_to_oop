@@ -68,3 +68,10 @@ class QuizProgram:
                 print("You should study, LOL!")
         
         print("-" * 50)
+
+    def ask_retake(self):
+        retake = input("\nWould you like to take another quiz? (y/n): ").lower()
+        if retake in ['y', 'yes']:
+            print("\nPlease restart the program to take another quiz.")
+        else:
+            print("\nBye!")
