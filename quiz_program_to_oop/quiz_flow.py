@@ -105,3 +105,11 @@ class QuizProgram:
             
             # Check answer and update score
             self.check_answer(question, user_answer)
+
+    def start(self):
+        self.display_header()
+        
+        if self.load_quiz_file():
+            self.run_quiz()
+            self.results()
+            self.ask_retake()
