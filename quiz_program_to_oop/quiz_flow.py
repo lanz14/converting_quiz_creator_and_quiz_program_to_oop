@@ -28,3 +28,16 @@ class QuizProgram:
         
         print(f"\nLoaded {len(self.questions)} questions from '{filename}'")
         return True
+    
+    def get_user_answer(self):
+        answer = ""
+        while answer not in ['a', 'b', 'c', 'd', 'A', 'B', 'C', 'D', 'q', 'Q']:
+            answer = input("\nYour answer (A/B/C/D) or 'Q' to quit: ")
+            
+            if answer.lower() == 'q':
+                return 'q'
+            
+            if answer not in ['a', 'b', 'c', 'd', 'A', 'B', 'C', 'D']:
+                print("Please enter A, B, C, D, or Q.")
+        
+        return answer.lower()
