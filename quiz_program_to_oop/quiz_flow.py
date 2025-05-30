@@ -1,6 +1,7 @@
 from quiz_import import QuizImport
 
 import time
+import random
 
 class QuizProgram: 
     def display_header(self):
@@ -75,3 +76,7 @@ class QuizProgram:
             print("\nPlease restart the program to take another quiz.")
         else:
             print("\nBye!")
+
+    def run_quiz(self):
+        selected_questions = self.questions.copy()
+        random.shuffle(selected_questions)
