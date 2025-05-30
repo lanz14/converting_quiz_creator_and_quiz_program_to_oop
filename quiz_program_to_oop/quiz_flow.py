@@ -50,3 +50,21 @@ class QuizProgram:
             print(f"\n✗ Wrong! The correct answer is {question.correct_answer.upper()}.")
         
         time.sleep(1)
+
+    def results(self):
+        if self.question_count > 0:
+            print("\n" + "-" * 50)
+            print(f"Your score: {self.score}/{self.question_count}")
+            percentage = (self.score / self.question_count) * 100
+            print(f"Percentage: {percentage:.1f}%")
+            
+            if percentage >= 90:
+                print("Excellent work!")
+            elif percentage >= 70:
+                print("Good job!")
+            elif percentage >= 50:
+                print("Not bad, though!")
+            else:
+                print("You should study, LOL!")
+        
+        print("-" * 50)
