@@ -41,3 +41,12 @@ class QuizProgram:
                 print("Please enter A, B, C, D, or Q.")
         
         return answer.lower()
+    
+    def check_answer(self, question, user_answer):
+        if question.is_correct(user_answer):
+            print("\n✓ Correct!")
+            self.score += 1
+        else:
+            print(f"\n✗ Wrong! The correct answer is {question.correct_answer.upper()}.")
+        
+        time.sleep(1)
