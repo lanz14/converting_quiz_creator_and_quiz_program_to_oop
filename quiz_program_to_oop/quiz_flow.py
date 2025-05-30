@@ -80,3 +80,28 @@ class QuizProgram:
     def run_quiz(self):
         selected_questions = self.questions.copy()
         random.shuffle(selected_questions)
+
+        print("\nStarting quiz...")
+        time.sleep(1)
+        
+        # Reset counters
+        self.score = 0
+        self.question_count = 0
+        
+        # Loop through questions
+        for question in selected_questions:
+            self.question_count += 1
+            
+            # Display question
+            question.display(self.question_count)
+            
+            # Get user answer
+            user_answer = self.get_user_answer()
+            
+            # Check if user wants to quit
+            if user_answer == 'q':
+                print("\nQuiz terminated.")
+                break
+            
+            # Check answer and update score
+            self.check_answer(question, user_answer)
