@@ -1,3 +1,5 @@
+from quiz_import import QuizImport
+
 import time
 
 class QuizProgram: 
@@ -15,3 +17,14 @@ class QuizProgram:
         self.questions = []
         self.score = 0
         self.question_count = 0
+
+    def load_quiz_file(self):
+        filename = input("\nEnter the quiz file name: ")
+        self.questions = QuizImport.load_questions(filename)
+        
+        if not self.questions:
+            print("No questions loaded. Exiting program.")
+            return False
+        
+        print(f"\nLoaded {len(self.questions)} questions from '{filename}'")
+        return True
