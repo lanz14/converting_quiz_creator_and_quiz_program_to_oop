@@ -3,7 +3,7 @@ from quiz_import import QuizImport
 import time
 import random
 
-class QuizProgram: 
+class QuizProgram(): 
     def display_header(self):
             """Display the quiz program header."""
             print("\n" + "-" * 50)
@@ -93,7 +93,7 @@ class QuizProgram:
             self.question_count += 1
             
             # Display question
-            question.display(self.question_count)
+            question.display_questions_choices(self.question_count)
             
             # Get user answer
             user_answer = self.get_user_answer()
